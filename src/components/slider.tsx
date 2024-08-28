@@ -1,48 +1,57 @@
 'use client'
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Slides = [
-  {
-    id: 1,
-    title: "Latest Fashion Trends",
-    description: "Discover the newest trends in fashion with our latest collection.",
-    img: "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg",
-    background: "bg-gradient-to-r from-blue-50 to-yellow-50",
-  },
-  {
-    id: 2,
-    title: "New Arrivals in Electronics",
-    description: "Check out the latest electronics at unbeatable prices.",
-    img: "https://images.pexels.com/photos/3680218/pexels-photo-3680218.jpeg",
-    background: "bg-gradient-to-r from-green-50 to-purple-50",
-  },
-  {
-    id: 3,
-    title: "Home & Living Essentials",
-    description: "Upgrade your home with our top picks in home & living.",
-    img: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg",
-    background: "bg-gradient-to-r from-pink-50 to-orange-50",
-  },
-  {
-    id: 4,
-    title: "Fitness & Sports Gear",
-    description: "Get the best deals on fitness and sports gear.",
-    img: "https://images.pexels.com/photos/3825517/pexels-photo-3825517.jpeg|",
-    background: "bg-gradient-to-r from-teal-50 to-indigo-50",
-  },
-  {
-    id: 5,
-    title: "Beauty & Personal Care",
-    description: "Find the perfect products to enhance your beauty routine.",
-    img: "https://images.pexels.com/photos/3765113/pexels-photo-3765113.jpeg",
-    background: "bg-gradient-to-r from-yellow-50 to-red-50",
-  }
-];
+    {
+      id: 1,
+      title: "50% Off on Latest Fashion Trends",
+      description: "Discover the newest trends in fashion with our latest collection.",
+      img: "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg",
+      background: "bg-gradient-to-r from-blue-50 to-yellow-50",
+    },
+    {
+      id: 2,
+      title: "30% Off on New Arrivals in Electronics",
+      description: "Check out the latest electronics at unbeatable prices.",
+      img: "https://images.pexels.com/photos/3680218/pexels-photo-3680218.jpeg",
+      background: "bg-gradient-to-r from-green-50 to-purple-50",
+    },
+    {
+      id: 3,
+      title: "20% Off on Home & Living Essentials",
+      description: "Upgrade your home with our top picks in home & living.",
+      img: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg",
+      background: "bg-gradient-to-r from-pink-50 to-orange-50",
+    },
+    {
+      id: 4,
+      title: "40% Off on Fitness & Sports Gear",
+      description: "Get the best deals on fitness and sports gear.",
+      img: "https://images.pexels.com/photos/3825517/pexels-photo-3825517.jpeg",
+      background: "bg-gradient-to-r from-teal-50 to-indigo-50",
+    },
+    {
+      id: 5,
+      title: "35% Off on AirPods & Accessories",
+      description: "Find the perfect products to enhance your beauty routine.",
+      img: "https://images.pexels.com/photos/20013900/pexels-photo-20013900/free-photo-of-tecnologia-musica-sonar-sonido.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      background: "bg-gradient-to-r from-yellow-50 to-red-50",
+    }
+  ];
+  
 
 const Slider = () => {
   const [current, setCurrent] = useState(0);
+
+  useEffect(()=>{
+    const interval = setInterval(()=>{
+        setCurrent((prev) => (prev === Slides.length -1 ? 0: prev + 1))
+    }, 3000)
+
+    return ()=>clearInterval(interval)
+  }, [])
 
   return (
     <div className="relative h-[calc(100vh-80px)] overflow-hidden">
@@ -57,7 +66,7 @@ const Slider = () => {
               className={`w-full h-1/2 ${slide.background} flex flex-col gap-8 items-center justify-center p-4 lg:w-1/2 lg:h-full`}
             >
               <h2 className="text-md text-center md:text-xl">{slide.description}</h2>
-              <h1 className="text-2xl font-bold md:text-5xl">{slide.title}</h1>
+              <h1 className="text-2xl text-center font-bold md:text-5xl">{slide.title}</h1>
               <button className="p-2 bg-black text-white rounded-md cursor-pointer hover:bg-white hover:text-black transition ease-in">
                 Shop Now
               </button>
