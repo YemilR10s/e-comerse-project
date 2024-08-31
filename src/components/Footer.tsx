@@ -3,13 +3,13 @@ import Image from "next/image"
 const Footer = () => {
   return (
     <>
-    <div className="w-full bg-gray-300 mt-12 p-4 flex flex-col gap-8">
+    <div className="w-full bg-gray-300 mt-12 p-4 flex flex-col gap-8 px-4 md:px-8 lg:px-16 xl:px-32">
       <div className="w-full flex justify-center items-center flex-col md:flex-row md:justify-around gap-8">
                 {/* left */}
-        <div className="flex flex-col gap-8 justify-between mb-12 lg:px-10">
+        <div className="flex flex-col gap-4 justify-between">
           <h1 className="font-semibold">Lama</h1>
           <div className="flex flex-col gap-8">
-            <p>3251 Winding way central plaza Willowbrook CA 90210, Unite states</p>
+            <p>3251 Winding way central plaza Willowbrook <br /> CA 90210, Unite states</p>
             <p>Hello@Yemil.Dev</p>
             <p>+1 234-567-890</p>
               {/* redes sociales */}
@@ -65,11 +65,11 @@ const Footer = () => {
 
 
           {/* right */} 
-        <div className="flex items-center justify-center lg:px-10">
+        <div className="flex items-center justify-center">
           <div className="flex flex-col justify-between gap-14">
             <h1 className="font-semibold">Suscribe</h1>
             <div className="flex flex-col justify-between gap-4">
-              <p>Be the firts to get the lastest news about trends,promotions and much more</p>
+              <p>Be the firts to get the lastest news about trends,<br />promotions and much more</p>
               <div className="flex">
                 <input type="text" placeholder="Email Addres"/>
                 <button className="p-3 bg-red-500 text-white">Join</button>

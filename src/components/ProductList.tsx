@@ -4,7 +4,7 @@ import Link from "next/link"
 const ProductList = () => {
   return (
     <>
-        <div className="mt-12 flex justify-center items-center gap-8 flex-wrap ">
+        <div className="mt-12 flex justify-between items-center gap-8 flex-wrap">
             <Link href='/' className="w-full flex flex-col justify-between sm:w-[45%] lg:w-[20%] ">
                 <div className="w-full h-80 relative">
                     <Image 

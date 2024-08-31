@@ -5,7 +5,7 @@ import React from 'react'
 const NewProducts = () => {
   return (
     <>
-        <div className="mt-12 flex justify-center items-center gap-8 flex-wrap ">
+        <div className="mt-12 flex justify-center items-center gap-8 flex-wrap md:px-8 lg:px-16 ">
             <Link href='/' className="w-full flex flex-col justify-between sm:w-[45%] lg:w-[20%] ">
                 <div className="w-full h-80 relative">
                     <Image 
